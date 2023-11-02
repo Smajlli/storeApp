@@ -1,0 +1,46 @@
+<% layout('layouts/boilerplate') %>
+    <h1 class="text-center mt-4">Add a new Product: </h1>
+    <div class="col-6 offset-3">
+        <div class="row">
+            <form action="/products" method="POST" class="validated-form" enctype="multipart/form-data" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Product title: </label>
+                    <input type="text" name="product[title]" id="title" class="form-control" required>
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+                <label for="price" class="form-label">Product price: </label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" name="product[price]" id="price" required>
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example"name="product[category]" required>
+                            <option selected>Product category</option>
+                            <option value="All">All</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Tech">Tech</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Clothes">Clothes</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <label for="floatingSelect">Category</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Product description: </label>
+                    <textarea name="product[description]" id="description" cols="30" rows="4" class="form-control" required></textarea>
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload product image: </label>
+                    <input type="file" name="image" id="image" class="form-control" multiple required>
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success">Add a Product</button>
+                </div>
+            </form>
+        </div>
+    </div>

@@ -1,0 +1,26 @@
+<% layout('layouts/boilerplate') %>
+<h1 class="text-center my-4">Your Cart</h1>
+<div class="col-6 offset-3">
+    <% for(let product of user.cart) { %>
+        <div class="card my-3">
+            <div class="row">
+                <div class="col md-4">
+                    <img class="img-fluid" src="/<%= product.image[0] %>" alt="cartImage" style="height: 200px;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= product.title %></h5>
+                        <p class="card-text"><%= product.description %></p>
+                        <p class="card-text">$<%= product.price %></p>
+                    </div>
+                    <div class="card-body d-flex gap-2">
+                        <a class="btn btn-primary" href="/products/<%= product._id %>"> View Product </a>
+                        <form action="/cart/<%= user._id %>/product/<%= product._id %>/?_method=DELETE" method="POST">
+                            <button class="btn btn-danger">Remove</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+</div>
