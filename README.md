@@ -7,6 +7,7 @@ While I was working on this project, I used many different technologies and npm 
 ### Frontend: 
 - CSS
 - EJS
+- Bootstrap
 
 ### Backend
 - Express
